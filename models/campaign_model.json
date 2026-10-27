@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "model_name": "logreg",
+  "model_path": "/Users/lidiiaflorenskaia/Documents/ШАД_ML/bank_term_deposit/models/campaign_model.joblib",
+  "threshold": 0.19,
+  "call_cost": 2.0,
+  "deposit_value": 10.0,
+  "feature_columns": [
+    "job",
+    "marital",
+    "education",
+    "credit_default",
+    "housing",
+    "loan",
+    "contact",
+    "month",
+    "day_of_week",
+    "poutcome",
+    "age",
+    "campaign",
+    "pdays",
+    "never_contacted",
+    "previous",
+    "cons_price_idx",
+    "cons_conf_idx",
+    "nr_employed"
+  ],
+  "validation": "StratifiedKFold на всех строках витрины. Порог по средней прибыли фолда.",
+  "models": [
+    {
+      "model_name": "logreg",
+      "params": {
+        "C": 0.1
+      },
+      "threshold": 0.19,
+      "cv_average_precision": 0.4462000170032258,
+      "elapsed_sec": 3.5,
+      "n": 41188,
+      "oof": {
+        "n": 8237.6,
+        "calls": 1251.4,
+        "true_positives": 528.6,
+        "revenue": 5286.0,
+        "expenses": 2502.8,
+        "profit": 2783.2,
+        "profit_per_client": 0.33786576907713034,
+        "precision": 0.4226751577128153,
+        "recall": 0.5696120689655172,
+        "accuracy": 0.8637711080660535,
+        "call_rate": 0.1519131237218782,
+        "positive_rate": 0.11265417151624565,
+        "roc_auc": 0.7884194296055489,
+        "average_precision": 0.4462000170032258,
+        "profit_std": 140.0828326384072
+      }
+    },
+    {
+      "model_name": "random_forest",
+      "params": {
+        "min_samples_leaf": 20,
+        "max_features": "sqrt",
+        "max_depth": null
+      },
+      "threshold": 0.2,
+      "cv_average_precision": 0.4642315799271094,
+      "elapsed_sec": 30.5,
+      "n": 41188,
+      "oof": {
+        "n": 8237.6,
+        "calls": 1252.0,
+        "true_positives": 545.2,
+        "revenue": 5452.0,
+        "expenses": 2504.0,
+        "profit": 2948.0,
+        "profit_per_client": 0.3578717446367555,
+        "precision": 0.43564682463662247,
+        "recall": 0.5875,
+        "accuracy": 0.8677285678820065,
+        "call_rate": 0.15198601588183142,
+        "positive_rate": 0.11265417151624565,
+        "roc_auc": 0.7949801233159739,
+        "average_precision": 0.4642315799271094,
+        "profit_std": 125.73782247199925
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+pandas
+numpy
+scikit-learn
+joblib
+sqlalchemy
+psycopg2-binary
+apache-airflow-providers-postgres==5.11.2
